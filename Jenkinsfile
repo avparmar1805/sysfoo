@@ -12,11 +12,6 @@ stages {
 	sh 'mvn compile'	
 	}
    }
-stage('two'){
-    steps{
-	sh 'mvn clean test'
-        }
-   }
 stage('three'){
     steps{
 	echo 'package maven app'	
