@@ -9,17 +9,17 @@ pipeline{
 stages {
   stage('one'){
     steps{
-	mvn complie	
+	sh 'mvn complie'	
 	}
    }
 stage('two'){
     steps{
-	mvn clean test
+	sh 'mvn clean test'
         }
    }
 stage('three'){
     steps{
-	mvn package -DskipTests	
+	sh 'mvn package -DskipTests'	
         }
    }
  }
