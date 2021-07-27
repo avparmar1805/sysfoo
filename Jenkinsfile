@@ -9,7 +9,7 @@ pipeline{
 stages {
   stage('one'){
     steps{
-	sh 'mvn complie'	
+	sh 'mvn compile'	
 	}
    }
 stage('two'){
@@ -19,6 +19,7 @@ stage('two'){
    }
 stage('three'){
     steps{
+	echo 'package maven app'	
 	sh 'mvn package -DskipTests'	
         }
    }
