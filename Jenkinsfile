@@ -44,7 +44,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
-            def dockerImage = docker.build("tanushee/sysfoo:v-{env.BRANCH_NAME}${env.BUILD_ID}", "./")
+            def dockerImage = docker.build("tanushee/sysfoo:v-${env.BRANCH_NAME}${env.BUILD_ID}", "./")
             dockerImage.push()
             dockerImage.push("latest")
             dockerImage.push("dev")
